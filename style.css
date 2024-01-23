@@ -1,0 +1,95 @@
+*,
+::after,
+::before{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    background-color: black;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    align-items:center;
+}
+.head{
+
+    text-transform: capitalize;
+}
+.subcontainer{
+    border: 1px solid;
+    padding: 5%;
+    height:400px;
+    position: relative;
+    isolation: isolate;
+    border-radius: 6px;
+    overflow: hidden;
+   
+}
+   .subcontainer::after{
+        content: "";
+        position: absolute;
+        background: linear-gradient(45deg, rgb(48, 63, 78), rgb(94, 142, 156), rgb(61, 55, 61));
+        inset: 0;
+        margin: 3px;
+        z-index: -10;
+        border-radius: 6px;
+    }  
+    .subcontainer::before{
+        content: "";
+        position: absolute;
+        background-color: gold;
+        top:-200px;
+        width: 90px;
+        height: 200%;
+        z-index: -11;
+        border-radius: 6px;
+        animation:rotate 4s infinite linear;
+    }  
+
+    @keyframes rotate{
+        10%{
+            background-color: red;
+        }
+        40%{
+            background-color: blueviolet;
+        }
+        70%{
+            background-color: hotpink;
+        }
+        100%{
+            background-color: green;
+            transform: rotate(360deg);
+        }
+    }
+
+.inputs{
+    margin-top:20px;
+    padding: 5px 10px;
+
+}
+button{
+    margin-top:20px;
+    padding: 5px 10px;
+    width: 185px;
+    border-radius: 100vh;
+    background-color:rgb(70, 70, 70);
+    color:white;
+}
+@media  screen and (max-width:600px) {
+    .container{
+        width:100%;
+    }
+    .subcontainer{
+
+        padding: 5%;
+    }
+}
+span{
+    color: whitesmoke;
+}
+h1{
+    color:aquamarine;
+}
